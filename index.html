@@ -2,10 +2,369 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>OpenPMD</title>
+        <meta name="author" content="Axel Huebl et al." />
+        <meta name="description" content="openPMD provides naming and attribute conventions that allow to exchange particle and mesh based data from scientific simulations and experiments." />
+        <title>openPMD</title>
+
+        <!-- <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" /> -->
+
+        <link href="css/style.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="css/styles/default.css" />
+        <script src="js/highlight.pack.js"></script>
+
+        <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+
+        <!-- jQuery -->
+
+        <!-- <link rel="shortcut icon" href="favicon.png" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png" /> -->
     </head>
 
-    <body>
-    <h1>The OpenPMD Standard</h1>
+    <body class="impress-not-supported">
+
+        <div class="fallback-message">
+            <p>Your browser <b>doesn't support the features required</b> by impress.js,
+               so you are presented with a simplified version of this presentation.</p>
+            <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or
+               <b>Firefox</b> browser.</p>
+        </div>
+
+        <div class="footer">
+          <ul>
+            <li id="descriptions">&nbsp;</li>
+          </ul>
+          <ul class="menu">
+            <li><a href="#start">Start</a></li>
+            <li><a href="https://raw.githubusercontent.com/ComputationalRadiationPhysics/openPMD/draft/AUTHORS.md?token=ABSmKlcex0GsTYfg9qasUDbr8PvWTARXks5VOJ0LwA%3D%3D" target="_blank">CC-BY</a></li>
+            <li><a href="https://github.com/ComputationalRadiationPhysics/openPMD" target="_blank" onClick="alert('Not yet public. Please write an email to Axel Huebl <a.huebl@hzdr.de>.');void(0);return false;">Technical Files</a></li>
+          </ul>
+        </div>
+
+        <!--<a href="https://github.com/ComputationalRadiationPhysics/openPMD" style="z-index: 998;pointer-events: auto;">
+            <img style="position: absolute; top: 0; right: 0; border: 0;"
+                 src="./img/for_me_on_github.png" alt="Fork me on GitHub">
+        </a>-->
+
+        <div style="position: absolute; bottom: 15%; right: 5%; border: 0;z-index: 1000;font-size:200%;background-color:#aaa; border-radius: 15%; padding:0.5em;letter-spacing: 0.2em;">DRAFT</div>
+
+        <div id="impress">
+
+        <div id="start" class="step" data-x="0" data-y="0">
+            <span><img style="max-width: 100%;" src="./img/logo_clean_hd.png" alt="DD" /></span>
+            <span class="description">A meta-data standard</span>
+        </div>
+        <div class="step" data-x="0" data-y="0">
+            <span><img style="max-width: 100%;" src="./img/logo_mesh_hd.png" alt="DD" /></span>
+            <span class="description">for mesh based data ...</span>
+        </div>
+        <div class="step" data-x="0" data-y="0">
+            <span><img style="max-width: 100%;" src="./img/logo_hd.png" alt="DD" /></span>
+            <span class="description">and particle data sets.</span>
+        </div>
+
+        <div class="step" data-x="1000" data-y="0">
+            <a href="#concepts" class="selectJump" onClick="this.className += ' visited';">Basic Concepts</a>
+            <a href="#performance" class="selectJump" onClick="this.className += ' visited';">Optimizations &amp; Performance</a>
+            <a href="#timeseries" class="selectJump" onClick="this.className += ' visited';">Time Series and further Options</a><!-- Root-Group Config -->
+            <a href="#tools" class="selectJump" onClick="this.className += ' visited';">Developer Tools & Processing</a><!-- example files; checker script; serial high-lvl API and parallel processing (with pyDive) -->
+            <a href="#edpic" class="selectJump" onClick="this.className += ' visited';">Domain-Specific Extensions</a><!-- Software that currently implements the standard -->
+            <!--<a href="#futureplans" class="selectJump" onClick="this.className += ' visited';">Future Plans</a> patches & AMR, irregular cartesian grid, ... more mesh types if required -->
+
+            <span class="description">What are you interested in?</span>
+        </div>
+
+        <div id="concepts" class="step" data-x="2000" data-y="0">
+            <img src="https://raw.githubusercontent.com/ComputationalRadiationPhysics/openPMD/draft/img/exampleHDFview1.png?token=ABSmKvPbKLxzrsPVGVWZizgo9xBPqWtUks5VOJvtwA%3D%3D" alt="ED-PIC Extension" style="width:317px;border:0;margin-bottom:35%;margin-left:35%">
+            <span class="description">Clean Common Structure</span>
+        </div>
+        <div class="step" data-x="2000" data-y="0">
+            <img src="https://raw.githubusercontent.com/ComputationalRadiationPhysics/openPMD/draft/img/exampleHDFview2.png?token=ABSmKg9mX4uw9KxbX9MCMU_lYu6EfoTEks5VOJwDwA%3D%3D" alt="Example Standard" style="width:317px;border:0;margin-bottom:35%;margin-left:35%"><!-- org: w=317px -->
+            <span class="description">... and Domain Specific Extensions</span>
+        </div>
+
+        <div class="step" data-x="3000" data-y="0">
+            <div style="margin-top:-20%">&nbsp;</div><br />
+            <a href="https://www.olcf.ornl.gov/center-projects/adios/" style="pointer-events: auto" target="_blank">
+                <img src="./img/ADIOS.png" alt="ADIOS" style="max-width:45%;border:0;margin-bottom:5%" /><!-- org: w=454px -->
+            </a>
+            <a href="http://hdfgroup.org/" style="pointer-events: auto" target="_blank">
+                <img src="./img/hdf5.png" alt="HDF5" style="max-width:45%;border:0;margin-bottom:5%;margin-left:5%" /><!-- org: w=454px -->
+            </a>
+            <p><sup>*</sup>currently implemented, but <i>not</i> limited to</p>
+
+            <span class="description">For hierarchical, self-describing data formats.</span>
+        </div>
+
+        <div class="step" data-x="4000" data-y="0">
+            <p>How to avoid confusion between actual low-level <b>data sets & attributes</b> (HDF5 speak), <b>variables & attributes</b> (ADIOS language), <b>groups/folders</b> and the actual physical physical quantities?</p>
+            <span class="description">openPMD naming convention</span>
+        </div>
+
+        <div class="step" data-x="4000" data-y="0">
+            Physical quanities are <b>records</b>:
+            <ul>
+              <li>discritized vector field \(\vec F(\vec r)\) on a mesh</i></li>
+              <li>discritized scalar field \(T(\vec r)\) on a mesh</li>
+              <li>particle property position \(\vec r_i\)</li>
+              <li>...</li>
+            </ul>
+            
+            <span class="description"><b>Record</b>: each particle property or mesh</span>
+        </div>
+
+        <div class="step" data-x="4000" data-y="0">
+            Their actual <b>components</b> are stored in (multi-dimensional) arrays (= data sets / variables) <i>inside</i> those <b>records</b>!
+            
+            <span class="description"><b>Position.x</b>: <u>not</u> a record, it's a <i>component<i></span>
+        </div>
+
+        <div class="step" data-x="5000" data-y="0">
+            Required attributes for each <b>record</b>:
+            <ul>
+              <li>unit / unitDimension / time / timeUnitSI</li>
+            </ul>
+            
+            <span class="description">Attributes for all <b>records</b></span>
+        </div>
+
+        <div class="step" data-x="5000" data-y="0">
+            Required attributes for each <b>record</b>:
+            <ul>
+              <li>unitDimension ...</li>
+            </ul>
+            
+            <span class="description">Attributes for all <b>records</b></span>
+        </div>
+
+        <div class="step" data-x="6000" data-y="0">
+            Required attributes for each <b>mesh record</b>:
+            <ul>
+              <li>geometry, geometryParameters</li>
+              <li>gridSpacing</li>
+              <li>gridGlobalOffset</li>
+              <li>gridUnitSI</li>
+              <li>dataOrder (C/Fortran)</li>
+            </ul>
+
+            Required attributes for each <b>mesh record component</b>:
+            <ul>
+              <li>position (on grid)</li>
+            </ul>
+            
+            <span class="description">Attributes for <b>mesh records</b></span>
+        </div>
+
+        <div class="step" data-x="7000" data-y="0">
+            Required property for each <b>particle species</b>:
+            <ul>
+              <li>at least a position record</li>
+            </ul>
+            
+            <span class="description">Attributes for <b>particle records</b></span>
+        </div>
+
+        <div class="step" data-x="8000" data-y="0">
+            <b>Examples for <i>records</i></b>
+            
+            <span class="description">&nbsp;</span>
+        </div>
+
+        <div class="step" data-x="8000" data-y="1000">
+            electric field \(\vec E(\vec r)\):
+            <ul>
+              <li>/ <span class="group">...</span> / <span class="group">meshes</span> / <span class="group">E</span> /
+                  <ul>
+                      <li><span class="dataSet">x</span></li>
+                      <li><span class="dataSet">y</span></li>
+                      <li><span class="dataSet">z</span></li>
+                  </ul>
+            </ul>
+            temperature \(T(\vec r)\):
+            <ul>
+              <li>/ <span class="group">...</span> / <span class="group">meshes</span> /
+                  <ul>
+                      <li><span class="dataSet">\(T\)</span></li>
+                  </ul>
+            </ul>
+
+            <span class="description"><b>Legend:</b>
+                <span class="group">Group</span> /
+                <span class="dataSet">(multi-dim) Array</span>
+            </span>
+        </div>
+
+        <div class="step lastInSection" data-x="8000" data-y="2000">
+            electron position \(\vec r\):
+            <ul>
+              <li>/ <span class="group">...</span> / <span class="group">particles</span> / <span class="group">electrons</span> / <span class="group">position</span> /
+                  <ul>
+                      <li><span class="dataSet">x</span></li>
+                      <li><span class="dataSet">y</span></li>
+                      <li><span class="dataSet">z</span></li>
+                  </ul>
+            </ul>
+            electron charge \(Q\):
+            <ul>
+              <li>/ <span class="group">...</span> / <span class="group">particles</span> / <span class="group">electrons</span>
+                  <ul>
+                      <li><span class="dataSet">charge</span></li>
+                  </ul>
+            </ul>
+
+            <span class="description"><b>Legend:</b>
+                <span class="group">Group</span> /
+                <span class="dataSet">(multi-dim) Array</span>
+            </span>
+        </div>
+
+        <div id="performance" class="step" data-x="9000" data-y="0">
+            Ok ok, I got it! But what about <b>constant components</b> in a record?
+            <span class="description">&nbsp;</span>
+        </div>
+
+        <div class="step" data-x="9000" data-y="1000">
+            ... [Replacement Scheme] ...
+            <span class="description">Constant Components in Records</span>
+        </div>
+
+        <div class="step" data-x="10000" data-y="0">
+            All right. But how to handle <b>Terabytes</b> of data written from thousands of processors?
+            <span class="description">&nbsp;</span>
+        </div>
+
+        <div class="step" data-x="10000" data-y="1000">
+            - Parallel file formats: ADIOS .bp, HDF5 (MPI-I/O)
+            - <b>recommended</b> record for particles: `particleGroups` ...
+            <span class="description">&nbsp;</span>
+        </div>
+
+        <div class="step" data-x="11000" data-y="0">
+            <p>In principle and <i>everywhere<sup>*</sup></i>: a human-readable <b>comment</b> (text) attribute is encouraged for everything not covered by the standard.</p>
+            <br />
+            <p><sup>*</sup> allowed for each group and data set</p>
+            <span class="description"><b>Comment</b> Attribute</span>
+        </div>
+
+        <div class="step" data-x="11000" data-y="1000">
+            <p>openPMD defines a <b>minimal set</b> of attributes, e.g.</p><br />
+            <ul>
+                <li>openPMDversion: identifier</li>
+                <li>basePath: prefix, currently fixed to `/data/`</li>
+                <li>meshesPath: relative sub-group, e.g., `meshes/`</li>
+                <li>particlesPath: relative sub-group, e.g., `particles/`</li>
+            </ul>
+            <span class="description"><b>Required</b> Base Attributes for `/`</span>
+        </div>
+
+        <div class="step lastInSection" data-x="11000" data-y="2000">
+            <ul>
+                <li>`author`: <i>My Name &lt;email@example.com&gt;</i></li>
+                <li>`software`: e.g., <i>PIConGPU</i></li>
+                <li>`softwareVersion`: e.g., <i>0.1.0</i></li>
+                <li>`date`: <i>2015-12-02 17:48:42 +0100</i></li>
+            </ul>
+            <span class="description"><b>Recommended</b> Base Attributes for `/`</span>
+        </div>
+
+        <div id="tools" class="step" data-x="12000" data-y="0">
+            Example files and creator scripts:
+            <pre><code class="bash">tools/ $ ./createExamples_h5.py</code></pre>
+            <span class="description">Developer Tools: Examples</span>
+        </div>
+
+        <div class="step" data-x="12000" data-y="1000">
+            <pre><code class="bash">$ ./checkOpenPMD_h5.py -i example.h5 --EDPIC
+
+Warning: Attribute softwareVersion (recommended) does NOT exist in `/`!
+Found 1 iteration(s)
+Iteration 0 : found 2 meshes
+Iteration 0 : found 1 particle species
+Warning: Key longName (recommended) does NOT exist in `/data/0/particles/electrons`!
+
+Result: 0 Errors and 2 Warnings.</code></pre>
+            <span class="description">Developer Tools: Checker Script</span>
+        </div>
+
+        <div class="step" data-x="13000" data-y="0">
+            Serial processing: high-level API (to do)
+            <ul>
+                <li>meta-data parsing</li>
+                <li>file-format independent (ADIOS & HDF5)</li>
+                <li>object oriented: meshes and particles</li>
+            </ul>
+            <span class="description">Developer Tools: Serial Processing</span>
+        </div>
+
+        <div class="step lastInSection" data-x="13000" data-y="1000">
+            Parallel processing: integration in
+            <a href="https://github.com/ComputationalRadiationPhysics/pyDive" target="_blank">pyDive</a>
+            <ul>
+                <li>numpy-like parallel access</li>
+                <li>read and write support</li>
+                <li>based on zeroMQ / ipython notebook</li>
+            </ul>
+
+            <span class="description">Developer Tools: Parallel Processing</span>
+        </div>
+
+        <div id="edpic" class="step" data-x="14000" data-y="0">
+            <img src="./img/extensions.png" alt="Extensions" style="max-width:95%;border:0;margin-bottom:15%" /><!-- org: w=1565px -->
+
+            <span class="description"><b>Extensions:</b> Domain-Specific Additions</span>
+        </div>
+
+        <div class="step" data-x="14000" data-y="1000">
+            Implemented by PIConGPU & Warp
+            <ul>
+                <li>electro-dynamic and electro-static PIC</li>
+                <li>additional attributes</li>
+                <li>naming conventions for records</li>
+            </ul>
+
+            <span class="description">The ED-PIC Extension</span>
+        </div>
+
+        <div class="step lastInSection" data-x="14000" data-y="2000">
+            One could add extensions for
+            <ul>
+                <li>Experimental data: CCD images, interferograms, ...</li>
+                <li>Simulations: MD, FEM,  ...</li>
+            </ul>
+
+            <span class="description">Other Domain-Specific Extensions</span>
+        </div>
+
+        <div id="futureplans" class="step" data-x="14000" data-y="0">
+            For future versions
+            <ul>
+                <li>record patches and AMR support</li>
+                <li>irregular cartesian grids</li>
+                <li>more mesh types: if required</li>
+            </ul>
+
+            <span class="description">Future Plans</span>
+        </div>
+
+        </div><!-- impress -->
+
+        <div class="hint">
+            <p>Use the spacebar or arrow keys to navigate</p>
+        </div>
+
+        <script src="js/impress.js"></script>
+        <script>
+        var impress = impress();
+        impress.init();
+
+        document.addEventListener('impress:stepenter', function(e){
+            document.querySelector("#descriptions").innerHTML = e.target.querySelector(".description").innerHTML;
+        });
+        </script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+
     </body>
 </html>
