@@ -68,7 +68,7 @@
         <div class="step" data-x="1000" data-y="0">
             <a href="#concepts" class="selectJump" onClick="this.className += ' visited';">Basic Concepts</a>
             <a href="#performance" class="selectJump" onClick="this.className += ' visited';">Optimizations &amp; Performance</a>
-            <a href="#timeseries" class="selectJump" onClick="this.className += ' visited';">Time Series and further Options</a><!-- Root-Group Config -->
+            <a href="#timeseries" class="selectJump" onClick="this.className += ' visited';">Time Series and further Options (upcoming slide)</a><!-- Root-Group Config -->
             <a href="#tools" class="selectJump" onClick="this.className += ' visited';">Developer Tools & Processing</a><!-- example files; checker script; serial high-lvl API and parallel processing (with pyDive) -->
             <a href="#edpic" class="selectJump" onClick="this.className += ' visited';">Domain-Specific Extensions</a><!-- Software that currently implements the standard -->
             <!--<a href="#futureplans" class="selectJump" onClick="this.className += ' visited';">Future Plans</a> patches & AMR, irregular cartesian grid, ... more mesh types if required -->
@@ -231,7 +231,7 @@
         </div>
 
         <div class="step" data-x="9000" data-y="1000">
-            ... [Replacement Scheme] ...
+            ... [Replacement Scheme] ... (please refer to STANDARD.md for now)
             <span class="description">Constant Components in Records</span>
         </div>
 
@@ -242,7 +242,7 @@
 
         <div class="step" data-x="10000" data-y="1000">
             - Parallel file formats: ADIOS .bp, HDF5 (MPI-I/O)
-            - <b>recommended</b> record for particles: `particleGroups` ...
+            - <b>recommended</b> record for particles: `particlePatches` ... (please refer to STANDARD.md for now)
             <span class="description">&nbsp;</span>
         </div>
 
@@ -287,25 +287,34 @@ Warning: Attribute softwareVersion (recommended) does NOT exist in `/`!
 Found 1 iteration(s)
 Iteration 0 : found 2 meshes
 Iteration 0 : found 1 particle species
-Warning: Key longName (recommended) does NOT exist in `/data/0/particles/electrons`!
 
-Result: 0 Errors and 2 Warnings.</code></pre>
+Result: 0 Errors and 1 Warning.</code></pre>
             <span class="description">Developer Tools: Checker Script</span>
         </div>
 
         <div class="step" data-x="13000" data-y="0">
-            Serial processing: high-level API (to do)
+            Serial processing: high-level API (coming soon)
             <ul>
                 <li>meta-data parsing</li>
                 <li>file-format independent (ADIOS & HDF5)</li>
-                <li>object oriented: meshes and particles</li>
+                <li>object oriented: meshes, particles &amp; iterations</li>
             </ul>
             <span class="description">Developer Tools: Serial Processing</span>
         </div>
 
+        <div class="step" data-x="13000" data-y="1000">
+            Parallel processing I: integration in suites such as
+            <ul>
+                <li>VisIt, Paraview (GUI, Python)</li>
+                <li><a href="https://github.com/ComputationalRadiationPhysics/libSplash" target="_blank">libSplash (C/C++)</a></li>
+            </ul>
+
+            <span class="description">Developer Tools: Parallel Processing</span>
+        </div>
+
         <div class="step lastInSection" data-x="13000" data-y="1000">
-            Parallel processing: integration in
-            <a href="https://github.com/ComputationalRadiationPhysics/pyDive" target="_blank">pyDive</a>
+            Parallel processing II: integration in parallel python processing via  
+            <a href="https://github.com/ComputationalRadiationPhysics/pyDive" target="_blank"><b>pyDive</b></a>
             <ul>
                 <li>numpy-like parallel access</li>
                 <li>read and write support</li>
