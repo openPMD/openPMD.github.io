@@ -124,16 +124,21 @@
         <div class="step" data-x="5000" data-y="0">
             Required attributes for each <b>record</b>:
             <ul>
-              <li>unit / unitDimension / time / timeUnitSI</li>
+              <li><b>unitSI:</b> conversion factor to common unit system</li>
+              <li><b>unitDimension:</b> parsable dimensionality</li>
+              <li><b>time / timeUnitSI:</b> iteration != time</li>
             </ul>
             
             <span class="description">Attributes for all <b>records</b></span>
         </div>
 
         <div class="step" data-x="5000" data-y="0">
-            Required attributes for each <b>record</b>:
+            <b>unitDimension:</b>:
             <ul>
-              <li>unitDimension ...</li>
+              <li>automate description of units</li>
+              <li>powers of the 7 (SI) base measures</li>
+              <li>e.g., `V/m` is length<sup>1.0</sup> mass<sup>1.0</sup> time<sup>-3.0</sup> electrical current<sup>-1.0</sup> thermodynamic temperature<sup>0.0</sup> ammount of substance<sup>0.0</sup> luminous intensity<sup>0.0</sup>: `[1.0, 1.0, -3.0, -1.0, 0.0, 0.0, 0.0]`</lib>
+              <li><small>(if your record can be scaled in a general normalized way, choose a reference and write a note in the `comment` attribute)</small></li>
             </ul>
             
             <span class="description">Attributes for all <b>records</b></span>
