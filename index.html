@@ -97,7 +97,10 @@
         </div>
 
         <div class="step" data-x="4000" data-y="0">
-            <p>How to avoid confusion between actual low-level <b>data sets &amp; attributes</b> (HDF5 speak), <b>variables &amp; attributes</b> (ADIOS speak), <b>files &amp; groups/folders</b> and the actual physical quantities?</p>
+            <p>How to avoid confusion between actual low-level <b><span class="dataSet">data sets</span> &amp;
+               <span class="attr">attributes</span></b> (HDF5 speak), <b><span class="dataSet">variables</span> &amp;
+               <span class="attr">attributes</span></b> (ADIOS speak), <b>files &amp; <span class="group">groups/folders</span></b>
+               and the actual physical quantities?</p>
             <span class="description">openPMD naming convention</span>
         </div>
 
@@ -114,24 +117,25 @@
         </div>
 
         <div class="step" data-x="4000" data-y="0">
-            Their actual <b>components</b> are stored in (multi-dimensional) arrays (= data sets / variables) <i>inside</i> those <b>records</b>!
+            Their actual <b>components</b> are stored in (multi-dimensional) <span class="dataSet">arrays</span>
+            (= data sets / variables) <i>inside</i> those <b>records</b>!
             
             <span class="description"><b>Position.x</b>: <u>not</u> a record, it's a <i>component</i></span>
         </div>
 
         <div class="step" data-x="5000" data-y="0">
-            Required attributes for each <b>record</b>:
+            Required <span class="attr">attributes</span> for each <b>record</b>:
             <ul>
-              <li><b>unitSI:</b> conversion factor to common unit system</li>
-              <li><b>unitDimension:</b> parsable dimensionality</li>
-              <li><b>time / timeUnitSI:</b> iteration != time</li>
+              <li><b><span class="attr">unitSI</span>:</b> conversion factor to common unit system</li>
+              <li><b><span class="attr">unitDimension</span>:</b> parsable dimensionality</li>
+              <li><b><span class="attr">time</span> / <span class="attr">timeUnitSI</span>:</b> iteration != time</li>
             </ul>
             
             <span class="description">Attributes for all <b>records</b></span>
         </div>
 
         <div class="step" data-x="5000" data-y="0">
-            <b>unitDimension:</b>:
+            <b><span class="attr">unitDimension</span>:</b>
             <ul>
               <li>automate description of units</li>
               <li>powers of the 7 (SI) base measures</li>
@@ -143,14 +147,14 @@
         </div>
 
         <div class="step" data-x="6000" data-y="0">
-            Required attributes for each <b>mesh record</b>:
+            Required <span class="attr">attributes</span> for each <b>mesh record</b>:
             <ul>
               <li>geometry (+ parameters)</li>
               <li>grid: spacing, global offset, axis labels</li>
               <li>data order (C/Fortran)</li>
             </ul>
 
-            Required attributes for each <b>mesh record component</b>:
+            Required <span class="attr">attributes</span> for each <b>mesh record component</b>:
             <ul>
               <li>position (on grid)</li>
             </ul>
