@@ -283,7 +283,7 @@
         <div class="step" data-x="11000" data-y="0">
             <p>In principle and <i>everywhere<sup>*</sup></i>: a human-readable <b>comment</b> (text) attribute is encouraged for everything not covered by the standard.</p>
             <br />
-            <p><sup>*</sup> allowed for each group and data set</p>
+            <p><sup>*</sup> reserved for each group and data set</p>
             <span class="description"><b>Comment</b> Attribute</span>
         </div>
 
@@ -294,22 +294,22 @@
         </div>
 
         <div class="step" data-x="11000" data-y="2000">
-            <p>openPMD defines a <b>minimal set</b> of attributes, e.g.</p><br />
+            <p>openPMD defines a <b>minimal set</b> of <span class="attr">attributes</span>, e.g.</p><br />
             <ul>
-                <li>openPMDversion: identifier</li>
-                <li>basePath: prefix, currently fixed to `/data/`</li>
-                <li>meshesPath: relative sub-group, e.g., `meshes/`</li>
-                <li>particlesPath: relative sub-group, e.g., `particles/`</li>
+                <li><span class="attr">openPMD</span>: identifier</li>
+                <li><span class="attr">basePath</span>: prefix, currently fixed to `/data/`</li>
+                <li><span class="attr">meshesPath</span>: relative sub-group, e.g., `meshes/`</li>
+                <li><span class="attr">particlesPath</span>: relative sub-group, e.g., `particles/`</li>
             </ul>
             <span class="description"><b>Required</b> Base Attributes for `/`</span>
         </div>
 
         <div class="step lastInSection" data-x="11000" data-y="3000">
             <ul>
-                <li>`author`: <i>My Name &lt;email@example.com&gt;</i></li>
-                <li>`software`: e.g., <i>PIConGPU</i></li>
-                <li>`softwareVersion`: e.g., <i>0.1.0</i></li>
-                <li>`date`: <i>2015-12-02 17:48:42 +0100</i></li>
+                <li><span class="attr">author</span>: <i>My Name &lt;email@example.com&gt;</i></li>
+                <li><span class="attr">software</span>: e.g., <i>PIConGPU</i></li>
+                <li><span class="attr">softwareVersion</span>: e.g., <i>0.1.0</i></li>
+                <li><span class="attr">date</span>: <i>2015-12-02 17:48:42 +0100</i></li>
             </ul>
             <span class="description"><b>Recommended</b> Base Attributes for `/`</span>
         </div>
@@ -333,7 +333,7 @@ Result: 0 Errors and 1 Warning.</code></pre>
         </div>
 
         <div class="step" data-x="13000" data-y="0">
-            Serial processing: high-level API (coming soon)
+            Serial processing: high-level API
             <ul>
                 <li>meta-data parsing</li>
                 <li>file-format independent (ADIOS & HDF5)</li>
@@ -343,6 +343,18 @@ Result: 0 Errors and 1 Warning.</code></pre>
         </div>
 
         <div class="step" data-x="13000" data-y="1000">
+            <a href="https://github.com/openPMD/openPMD-viewer" target="_blank"><b>openPMD viewer</b></a> 
+            <ul>
+                <li>Python API: openPMD object aware</li>
+                <li>GUI: IPython Notebook (interactive, remote)</li>
+                <li>ideal for investigating 1-2D data (or slices)</li>
+                <li>modular: e.g., domain specific analysis chains</li>
+            </ul>
+
+            <span class="description">Developer Tools: Parallel Processing</span>
+        </div>
+
+        <div class="step" data-x="13000" data-y="2000">
             Parallel processing I: integration in suites such as
             <ul>
                 <li>VisIt, Paraview (GUI, Python)</li>
@@ -352,11 +364,22 @@ Result: 0 Errors and 1 Warning.</code></pre>
             <span class="description">Developer Tools: Parallel Processing</span>
         </div>
 
-        <div class="step lastInSection" data-x="13000" data-y="1000">
+        <div class="step lastInSection" data-x="13000" data-y="2000">
             Parallel processing II: integration in parallel python processing via  
             <a href="https://github.com/ComputationalRadiationPhysics/pyDive" target="_blank"><b>pyDive</b></a>
             <ul>
                 <li>numpy-like parallel access</li>
+                <li>read and write support</li>
+                <li>based on zeroMQ / ipython notebook</li>
+            </ul>
+
+            <span class="description">Developer Tools: Parallel Processing</span>
+        </div>
+
+        <div class="step lastInSection" data-x="13000" data-y="3000">
+            Common tools
+            <ul>
+                <li><a href="https://github.com/openPMD/openPMD-viewer" target="_blank"><b>openPMD-viewer</b></a> numpy-like parallel access</li>
                 <li>read and write support</li>
                 <li>based on zeroMQ / ipython notebook</li>
             </ul>
