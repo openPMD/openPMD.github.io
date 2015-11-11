@@ -104,7 +104,7 @@
         <div class="step" data-x="4000" data-y="0">
             Physical quanities are <b>records</b>:
             <ul>
-              <li>discritized vector field \(\vec F(\vec r)\) on a mesh</i></li>
+              <li>discritized vector field \(\vec F(\vec r)\) on a mesh</li>
               <li>discritized scalar field \(T(\vec r)\) on a mesh</li>
               <li>particle property position \(\vec r_i\)</li>
               <li>...</li>
@@ -116,7 +116,7 @@
         <div class="step" data-x="4000" data-y="0">
             Their actual <b>components</b> are stored in (multi-dimensional) arrays (= data sets / variables) <i>inside</i> those <b>records</b>!
             
-            <span class="description"><b>Position.x</b>: <u>not</u> a record, it's a <i>component<i></span>
+            <span class="description"><b>Position.x</b>: <u>not</u> a record, it's a <i>component</i></span>
         </div>
 
         <div class="step" data-x="5000" data-y="0">
@@ -135,7 +135,7 @@
             <ul>
               <li>automate description of units</li>
               <li>powers of the 7 (SI) base measures</li>
-              <li>e.g., `V/m` is length<sup>1.0</sup> mass<sup>1.0</sup> time<sup>-3.0</sup> electrical current<sup>-1.0</sup> thermodynamic temperature<sup>0.0</sup> ammount of substance<sup>0.0</sup> luminous intensity<sup>0.0</sup>: `[1.0, 1.0, -3.0, -1.0, 0.0, 0.0, 0.0]`</lib>
+              <li>e.g., `V/m` is length<sup>1.0</sup> mass<sup>1.0</sup> time<sup>-3.0</sup> electrical current<sup>-1.0</sup> thermodynamic temperature<sup>0.0</sup> ammount of substance<sup>0.0</sup> luminous intensity<sup>0.0</sup>: `[1.0, 1.0, -3.0, -1.0, 0.0, 0.0, 0.0]`</li>
               <li><small>(if your record can be scaled in a general normalized way, choose a reference and write a note in the `comment` attribute)</small></li>
             </ul>
             
@@ -145,11 +145,9 @@
         <div class="step" data-x="6000" data-y="0">
             Required attributes for each <b>mesh record</b>:
             <ul>
-              <li>geometry, geometryParameters</li>
-              <li>gridSpacing</li>
-              <li>gridGlobalOffset</li>
-              <li>gridUnitSI</li>
-              <li>dataOrder (C/Fortran)</li>
+              <li>geometry (+ parameters)</li>
+              <li>grid: spacing, global offset, axis labels</li>
+              <li>data order (C/Fortran)</li>
             </ul>
 
             Required attributes for each <b>mesh record component</b>:
@@ -161,9 +159,14 @@
         </div>
 
         <div class="step" data-x="7000" data-y="0">
-            Required property for each <b>particle species</b>:
+            Required records for each <b>particle species</b>:
             <ul>
-              <li>at least a position record</li>
+              <li>position</li>
+              <li>position offset (can be constant)</li>
+            </ul>
+            <br />Optional:
+            <ul>
+              <li>id</li> 
             </ul>
             
             <span class="description">Attributes for <b>particle records</b></span>
@@ -229,9 +232,42 @@
         </div>
 
         <div class="step" data-x="9000" data-y="1000">
-            ... [Replacement Scheme] ... (please refer to STANDARD.md for now)
-            <span class="description">Constant Components in Records</span>
+            electron charge \(Q\) might be constant for all particles stored in species <b>electrons</b>:
+            <ul>
+              <li>/ <span class="group">...</span> / <span class="group">particles</span> / <span class="group">electrons</span>
+                  <ul>
+                      <li><span class="dataSet">charge</span>
+                      <ul>
+                          <li><span class="attr">unitSI</span>
+                      </ul></li>
+                  </ul></li>
+            </ul>
+            <span class="description"><b>Legend:</b>
+                <span class="group">Group</span> /
+                <span class="dataSet">Array</span> /
+                <span class="attr">Attribute</span>
+            </span>
         </div>
+
+        <div class="step" data-x="9000" data-y="1100" data-z="-200" data-rotate-x="-85">
+            <ul>
+              <li>/ <span class="group">...</span> / <span class="group">particles</span> / <span class="group">electrons</span>
+                  <ul>
+                      <li><span class="group">charge</span>
+                      <ul>
+                          <li><span class="attr">value</span>
+                          <li><span class="attr">shape</span>
+                          <li><span class="attr">unitSI</span>
+                      </ul></li>
+                  </ul></li>
+            </ul>
+            <span class="description"><b>Legend:</b>
+                <span class="group">Group</span> /
+                <span class="dataSet">Array</span> / 
+                <span class="attr">Attribute</span>
+            </span>
+        </div>
+
 
         <div class="step" data-x="10000" data-y="0">
             All right. But how to handle <b>Terabytes</b> of data written from thousands of processors?

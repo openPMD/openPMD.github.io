@@ -225,6 +225,10 @@ i, em { font-style: italic }
     color: #cd7900;
 }
 
+.attr {
+    color: #c10000;
+}
+
 .selectJump {
     border: 2px solid #333;
     border-radius: 25px;
