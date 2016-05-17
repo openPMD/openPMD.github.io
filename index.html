@@ -240,9 +240,9 @@
             <ul>
               <li>/ <span class="group">...</span> / <span class="group">particles</span> / <span class="group">electrons</span>
                   <ul>
-                      <li><span class="dataSet">charge</span>
+                      <li><span class="dataSet">charge</span>  <small>&larr; might be <i>very</i> large</small>
                       <ul>
-                          <li><span class="attr">unitSI</span>
+                          <li><span class="attr">unitSI</span></li>
                       </ul></li>
                   </ul></li>
             </ul>
@@ -259,9 +259,9 @@
                   <ul>
                       <li><span class="group">charge</span>
                       <ul>
-                          <li><span class="attr">value</span>
-                          <li><span class="attr">shape</span>
-                          <li><span class="attr">unitSI</span>
+                          <li><span class="attr">value</span> <small>&larr; few bytes</small></li>
+                          <li><span class="attr">shape</span></li>
+                          <li><span class="attr">unitSI</span></li>
                       </ul></li>
                   </ul></li>
             </ul>
@@ -272,16 +272,70 @@
             </span>
         </div>
 
+        <div class="step" data-x="9000" data-y="1100" data-z="-1000" data-rotate-x="-85">
+            possible for <i>any</i> <b>record component</b>, e.g.:
+            <ul>
+              <li>/ <span class="group">...</span> / <span class="group">particles</span> / <span class="group">electrons</span>
+                <ul>
+                  <li><span class="group">position</span>
+                    <ul>
+                      <li><span class="dataSet">x</span> + <span class="attr">unitSI</span></li>
+                      <li><span class="dataSet">y</span> + <span class="attr">unitSI</span></li>
+                      <li><span class="group">z</span>
+                          <ul>
+                              <li><span class="attr">value, shape</span>
+                              <li><span class="attr">unitSI</span></li>
+                          </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <span class="description"><b>Legend:</b>
+                <span class="group">Group</span> /
+                <span class="dataSet">Array</span> / 
+                <span class="attr">Attribute</span>
+            </span>
+        </div>
+
 
         <div class="step" data-x="10000" data-y="0">
-            All right. But how to handle <b>Terabytes</b> of data written from thousands of processors?
+            All right. But how to handle <b>Petabytes</b> of data written from thousands (-millions) of compute nodes?
             <span class="description">&nbsp;</span>
         </div>
 
         <div class="step" data-x="10000" data-y="1000">
-            - Parallel file formats: ADIOS .bp, HDF5 (MPI-I/O)
-            - <b>recommended</b> record for particles: `particlePatches` ... (please refer to STANDARD.md for now)
-            <span class="description">&nbsp;</span>
+            <ul>
+                <li>parallel, community file formats: writing/reading based on MPI &amp; MPI-I/O</li>
+                <li>examples:
+                    <ul>
+                        <li>PHDF5 <b>.h5</b> (parallel/strided, uncompressed)</li>
+                        <li>ADIOS <b>.bp</b> (aggregated, compressed)</li>
+                    </ul>
+                </li>
+            </ul>
+            <span class="description">Parallel file formats</span>
+        </div>
+
+        <div class="step" data-x="10000" data-y="2000">
+            <img src="./img/particlePatches_0.svg" alt="(Spatial) Domain Decomposition" style="width:100%;border:0;margin-bottom:1%" />
+            <span class="description">Particle Patches: Honor Decomposition</span>
+        </div>
+
+        <div class="step" data-x="10000" data-y="2000">
+            <img src="./img/particlePatches_1.svg" alt="(Spatial) Domain Decomposition" style="width:100%;border:0;margin-bottom:1%" />
+            <span class="description">Particle Patches: Disjoint Particle Sets</span>
+        </div>
+
+        <div class="step" data-x="10000" data-y="2000">
+            <img src="./img/particlePatches_2.svg" alt="(Spatial) Domain Decomposition" style="width:100%;border:0;margin-bottom:1%" />
+            <span class="description">Particle Patches: [Offset:Offset+Count]</span>
+        </div>
+
+        <div class="step" data-x="10000" data-y="2000">
+            <img src="./img/particlePatches_3.svg" alt="(Spatial) Domain Decomposition" style="width:100%;border:0;margin-bottom:1%" />
+            <span class="description">Particle Patches: (Spatial) Hyperrectangles</span>
         </div>
 
         <div class="step" data-x="11000" data-y="0">
