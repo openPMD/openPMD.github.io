@@ -137,6 +137,11 @@ body {
   padding: 0.5em;
 }
 
+.impress-on-step-6 #writtenstandard,
+.impress-on-concepts #writtenstandard {
+  color: #c10000;
+}
+
 /* basic text styles */
 b, strong { font-weight: bold }
 i, em { font-style: italic }
