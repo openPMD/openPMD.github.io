@@ -4,47 +4,49 @@ https://keybase.io/ax3l
 
 I hereby claim:
 
-  * I am an admin of http://openPMD.org
+  * I am an admin of https://www.openpmd.org
   * I am ax3l (https://keybase.io/ax3l) on keybase.
   * I have a public key ASDN9N4Cy9pAVQpsuyn4UjWiY6plTT1o01Q-0z26s2tJdwo
 
 To do so, I am signing this object:
 
 {
-    "body": {
-        "key": {
-            "eldest_kid": "0120cdf4de02cbda40550a6cbb29f85235a263aa654d3d68d3543ed33dbab36b49770a",
-            "host": "keybase.io",
-            "kid": "0120cdf4de02cbda40550a6cbb29f85235a263aa654d3d68d3543ed33dbab36b49770a",
-            "uid": "9788fbaa9c63cf466b4c82a5c8c9f119",
-            "username": "ax3l"
-        },
-        "service": {
-            "hostname": "openPMD.org",
-            "protocol": "http:"
-        },
-        "type": "web_service_binding",
-        "version": 1
+  "body": {
+    "key": {
+      "eldest_kid": "0120cdf4de02cbda40550a6cbb29f85235a263aa654d3d68d3543ed33dbab36b49770a",
+      "host": "keybase.io",
+      "kid": "0120cdf4de02cbda40550a6cbb29f85235a263aa654d3d68d3543ed33dbab36b49770a",
+      "uid": "9788fbaa9c63cf466b4c82a5c8c9f119",
+      "username": "ax3l"
     },
-    "client": {
-        "name": "keybase.io go client",
-        "version": "1.0.17"
-    },
-    "ctime": 1472945643,
-    "expire_in": 504576000,
     "merkle_root": {
-        "ctime": 1472945415,
-        "hash": "4a402513ba9c4190e890408cf5c090b1d6c2cf84f7212278ff856c21f0bbbfabaacb59e5c7125e5d56faaba3fa5a748274cbf984f1b6f6d14bfd8b2b4d3249d0",
-        "seqno": 617746
+      "ctime": 1527345291,
+      "hash": "6758772019aa044d8c71ccf4b0470838b6357344dc2bb6a2066882cb7cee54cd11158db438cec444c5c4c7e0ceac30be00ed979ad03a8667dd3d2ce838306e3c",
+      "hash_meta": "b4715b13e9918a43cee4a9386c8cffb7f1b3d922502c9585e2148c1329d41256",
+      "seqno": 2930324
     },
-    "prev": "ff9d47f0055d40168b03f7110772fd28aafc5e25055f7f105a4ffa9dac941e71",
-    "seqno": 11,
-    "tag": "signature"
+    "service": {
+      "entropy": "X60WaAt0V8ltWcLXW/Uu96aO",
+      "hostname": "www.openpmd.org",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.49"
+  },
+  "ctime": 1527345299,
+  "expire_in": 504576000,
+  "prev": "9fd01bb372cf5e235c19b10feb926221128190e8a3d3750194ff97ad43c79fc8",
+  "seqno": 38,
+  "tag": "signature"
 }
 
 which yields the signature:
 
-hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgzfTeAsvaQFUKbLsp+FI1omOqZU09aNNUPtM9urNrSXcKp3BheWxvYWTFAu97ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwY2RmNGRlMDJjYmRhNDA1NTBhNmNiYjI5Zjg1MjM1YTI2M2FhNjU0ZDNkNjhkMzU0M2VkMzNkYmFiMzZiNDk3NzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwY2RmNGRlMDJjYmRhNDA1NTBhNmNiYjI5Zjg1MjM1YTI2M2FhNjU0ZDNkNjhkMzU0M2VkMzNkYmFiMzZiNDk3NzBhIiwidWlkIjoiOTc4OGZiYWE5YzYzY2Y0NjZiNGM4MmE1YzhjOWYxMTkiLCJ1c2VybmFtZSI6ImF4M2wifSwic2VydmljZSI6eyJob3N0bmFtZSI6Im9wZW5QTUQub3JnIiwicHJvdG9jb2wiOiJodHRwOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4xNyJ9LCJjdGltZSI6MTQ3Mjk0NTY0MywiZXhwaXJlX2luIjo1MDQ1NzYwMDAsIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNDcyOTQ1NDE1LCJoYXNoIjoiNGE0MDI1MTNiYTljNDE5MGU4OTA0MDhjZjVjMDkwYjFkNmMyY2Y4NGY3MjEyMjc4ZmY4NTZjMjFmMGJiYmZhYmFhY2I1OWU1YzcxMjVlNWQ1NmZhYWJhM2ZhNWE3NDgyNzRjYmY5ODRmMWI2ZjZkMTRiZmQ4YjJiNGQzMjQ5ZDAiLCJzZXFubyI6NjE3NzQ2fSwicHJldiI6ImZmOWQ0N2YwMDU1ZDQwMTY4YjAzZjcxMTA3NzJmZDI4YWFmYzVlMjUwNTVmN2YxMDVhNGZmYTlkYWM5NDFlNzEiLCJzZXFubyI6MTEsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RAStqA5ST81KYN+svhnCV3fyRDx2wBzcVH6buvuhkPtIF15m9ABC4gexJ6LzOrYLm4u8ZppcgPgmrhe2+Iq/VOAqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIOKFqiAimQIFsHM2gz765TyGsAa3YuY5YKRnFs/Yiggto3RhZ80CAqd2ZXJzaW9uAQ==
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgzfTeAsvaQFUKbLsp+FI1omOqZU09aNNUPtM9urNrSXcKp3BheWxvYWTESpcCJsQgn9Abs3LPXiNcGbEP65JiIRKBkOij03UBlP+XrUPHn8jEIDAwh4AWgkVYWXmXlbvQFvlWyilCYVZgUsVLQD1XyD2IAgHCo3NpZ8RA1bzTl3v0qW1c/6h/fzLVZRC0H+PzEmmQ1eZAAW3Odu2g7I9wp3DMjL7U4hlVt5FM6UwzM8U8pkyGKLpoLWg/AKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEILwcpsQH7Az1ShCWoUaQaKMrN+vIpAathtjeSrEAbEcyo3RhZ80CAqd2ZXJzaW9uAQ==
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.
